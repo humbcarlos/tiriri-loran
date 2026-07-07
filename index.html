@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa de Umbanda - Ilê Axê Tiriri Lonan - Fé, Luz, Amor &amp; Caridade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="splash" onclick="fadeSplash()">
+    <canvas id="fireCanvas"></canvas>
+    <img src="images/Exu Tiriri.png" alt="Exu Tiriri" loading="lazy">
+    <div class="splash-bottom">
+      <h1>Casa de Umbanda - Ilê Axê Tiriri Lonan</h1>
+      <p>Fé, Luz, Amor &amp; Caridade</p>
+    </div>
+  </div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="logo-details">
+      <!-- <i class='bx bxl-firebase icon'></i> -->
+      <div class="logo_name">Ilê Axê Tiriri Lonan</div>
+      <i class='bx bx-menu' id="btn"></i>
+    </div>
+    <ul class="nav-list">
+      <li><a href="#inicio"><i class='bx bx-home'></i><span class="links_name">Início</span></a><span class="tooltip">Início</span></li>
+      <li><a href="#historia"><i class='bx bx-book-open'></i><span class="links_name">História</span></a><span class="tooltip">História</span></li>
+      <li><a href="#umbanda"><i class='bx bx-sun'></i><span class="links_name">Umbanda</span></a><span class="tooltip">Umbanda</span></li>
+      <li><a href="#orixas"><i class='bx bxs-star'></i><span class="links_name">Orixás</span></a><span class="tooltip">Orixás</span></li>
+      <li><a href="#mentores"><i class='bx bx-group'></i><span class="links_name">Mentores</span></a><span class="tooltip">Mentores</span></li>
+      <li><a href="#exus"><i class='bx bx-shield-quarter'></i><span class="links_name">Exus</span></a><span class="tooltip">Exus</span></li>
+      <li><a href="#guias"><i class='bx bx-compass'></i><span class="links_name">Guias</span></a><span class="tooltip">Guias</span></li>
+      <li><a href="#vibracoes"><i class='bx bx-radio'></i><span class="links_name">Vibrações</span></a><span class="tooltip">Vibrações</span></li>
+      <li><a href="#comemoracoes"><i class='bx bx-calendar'></i><span class="links_name">Datas</span></a><span class="tooltip">Datas</span></li>
+      <li><a href="#oracoes"><i class='bx bxs-heart'></i><span class="links_name">Orações</span></a><span class="tooltip">Orações</span></li>
+      <li><a href="#linha-trabalho"><i class='bx bx-briefcase'></i><span class="links_name">Trabalho</span></a><span class="tooltip">Trabalho</span></li>
+    </ul>
+    <div class="sidebar-footer">✦ Saravá ✦</div>
+  </aside>
+
+  <div class="right-nav-wrapper" data-item="contatos">
+    <div class="right-nav-item">
+      <i class='bx bx-phone'></i>
+      <span class="right-nav-label">Contatos</span>
+    </div>
+    <div class="right-panel">
+      <div class="right-panel-header">
+        <i class='bx bx-phone'></i> Contatos
+      </div>
+      <div class="right-panel-content">
+        <div class="right-panel-line">011 96483-1274</div>
+        <div class="right-panel-line">Maê Fernanda e Pai Aleandro</div>
+      </div>
+    </div>
+  </div>
+  <div class="right-nav-wrapper" data-item="horario">
+    <div class="right-nav-item">
+      <i class='bx bx-time-five'></i>
+      <span class="right-nav-label">Horário</span>
+    </div>
+    <div class="right-panel">
+      <div class="right-panel-header">
+        <i class='bx bx-time-five'></i> Horário de Funcionamento
+      </div>
+      <div class="right-panel-content">
+        <div class="right-panel-line">Sextas-feiras 19h às 00h</div>
+      </div>
+    </div>
+  </div>
+  <div class="right-nav-wrapper" data-item="chegar">
+    <div class="right-nav-item">
+      <i class='bx bx-current-location'></i>
+      <span class="right-nav-label">Como Chegar</span>
+    </div>
+    <div class="right-panel">
+      <div class="right-panel-header">
+        <i class='bx bx-current-location'></i> Como Chegar
+      </div>
+      <div class="right-panel-content">
+        <div class="right-panel-line">Rod. Henrique Eroles, 10308</div>
+        <div class="right-panel-line">Bairro Luis Carlos - Guararema - SP</div>
+        <div class="right-panel-line">Estrada Mogi/Guararema</div>
+      </div>
+    </div>
+  </div>
+  <div class="right-nav-wrapper" data-item="mapa">
+    <div class="right-nav-item">
+      <i class='bx bx-map-alt'></i>
+      <span class="right-nav-label">Mapa</span>
+    </div>
+    <div class="right-panel">
+      <div class="right-panel-header">
+        <i class='bx bx-map-alt'></i> Localização
+      </div>
+      <div class="right-panel-content">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.18750376441!2d-46.0711701!3d-23.453700099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cdd013d2895715%3A0x7365428cb7616da4!2sRod.%20Henrique%20Eroles%2C%2010308%20-%20Luiz%20Carlos%2C%20Mogi%20das%20Cruzes%20-%20SP%2C%2008900-000!5e0!3m2!1spt-BR!2sbr!4v1783423443671!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <main>
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="inicio">
+    <div class="hero-top">
+      <h1>Casa de Umbanda - Ilê Axê Tiriri Lonan</h1>
+    </div>
+    <div class="hero-bottom">      
+      <h1>Fé, Luz, Amor &amp; Caridade</h1>
+      <p>Religião brasileira que une amor ao próximo, conexão com a natureza e a sabedoria dos guias espirituais.</p>
+    </div>
+  </section>
+
+  <!-- ===== HISTÓRIA E FUNDAMENTOS DE EXU TIRIRI ===== -->
+  <section id="historia">
+    <div class="container-narrow text-content">
+      <h2 class="section-title">História e Fundamentos de Exu Tiriri</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Conheça a origem, a missão e os fundamentos deste grande Guardião dos Caminhos.</p>
+
+      <h3>1. Introdução: O Guardião dos Caminhos</h3>
+      <p>Nas encruzilhadas da vida, onde o visível e o invisível se encontram, habita uma das forças mais dinâmicas, respeitadas e vitais da Umbanda: Exu Tiriri. Longe de ser uma individualidade isolada, Tiriri é um poderoso chefe de falange, um comandante espiritual que lidera milhões de espíritos guardiões em prol da evolução humana, da justiça divina e da abertura de caminhos. Esta narrativa e compilação de fundamentos servem como base doutrinária e histórica, ilustrando a importância deste grandioso guia nos trabalhos de terreiro e na sustentação astral do nosso planeta.</p>
+
+      <h3>2. A Jornada Espiritual: O Mistério de sua Origem</h3>
+      <p>Conta a tradição oral e o conhecimento transmitido pelos guias que, em uma de suas passagens marcantes pelo plano terreno, a entidade que hoje lidera a falange de Tiriri viveu em palácios, cercada por realeza, luxo e erudição. Homem de inteligência rara, estrategista nato e detentor de um magnetismo pessoal inegável, ele conhecia profundamente as virtudes e as fraquezas da mente humana.</p>
+      <p>No entanto, sua jornada terrena foi severamente marcada por conspirações, injustiças e traições vindas daqueles em quem confiava. Ao realizar a sua passagem para o plano espiritual, diante do tribunal de sua própria consciência e sob a luz dos Orixás, ele não escolheu o caminho do rancor ou da vingança. Ele compreendeu o valor do equilíbrio universal. Pela sua lealdade inabalável ao Orixá Ogum e por sua pureza essencial ligada à linha das crianças (Yori), ele aceitou o fito de sua evolução: ser um Guardião da Luz nas Trevas. Ele abdicou do descanso nas esferas superiores para atuar no lodo do plano astral, resgatando almas e garantindo a ordem.</p>
+
+      <h3>3. A Dualidade da Força: O Sorriso e a Capa</h3>
+      <p>Diferente de outras entidades que guardam um aspecto puramente austero, Exu Tiriri caminha com uma dualidade arquétipica única, que equilibra perfeitamente o rigor e a leveza:</p>
+      <ul>
+        <li><strong>O Guerreiro Implacável:</strong> Munido de sua capa e tridente, ele corta a escuridão profunda. Desfaz feitiços complexos, desmancha amarrações espúrias e afasta espíritos obsessores com precisão militar e autoridade inquestionável.</li>
+        <li><strong>A Alegria da Criança:</strong> Devido à sua íntima conexão com a vibração dos Erês, Tiriri possui um sorriso largo, um olhar vivaz e um caminhar descontraído, por vezes brincalhão. Ele ensina aos consulentes que a maior arma contra a maldade não é o ódio, mas sim a leveza e a pureza de espírito.</li>
+      </ul>
+      <p>Seu olhar tudo vê. Ele é o mestre espiritual que desmascara a hipocrisia, mas que estende a mão com o amor e a firmeza de um pai para qualquer um que busque uma evolução real e sincera.</p>
+
+      <h3>4. As Sete Linhas e Falanges do Senhor Tiriri</h3>
+      <p>Como chefe de falange, Exu Tiriri se desdobra em diferentes campos da natureza e do plano espiritual para aplicar a lei de causa e efeito:</p>
+      <ul>
+        <li><strong>Exu Tiriri das Encruzilhadas:</strong> O grande responsável por movimentar as energias travadas do destino, abrindo portas profissionais, financeiras e pessoais.</li>
+        <li><strong>Exu Tiriri da Calunga (Cemitério):</strong> Atua diretamente nos portais sagrados governados por Omulu e Obaluaiê, descarregando larvas astrais e encaminhando almas perdidas.</li>
+        <li><strong>Exu Tiriri do Cruzeiro:</strong> Protetor dos cruzamentos de caminhos e das passagens astrais, bloqueando a entrada de energias deletérias em ambientes sagrados.</li>
+        <li><strong>Exu Tiriri Menino:</strong> A manifestação direta de sua ligação com a Linha de Yori, agindo com rapidez mágica para proteger a inocência de crianças e reerguer caídos.</li>
+      </ul>
+
+      <h3>5. Elementos Sagrados e Simbologia de Trabalho</h3>
+      <ul>
+        <li><strong>Cores:</strong> Preto e vermelho (padrão da linha de Exu), com a inclusão frequente do azul-escuro em terreiros que enfatizam sua ligação com Ogum.</li>
+        <li><strong>Dia de Maior Irradiação:</strong> Segunda-feira.</li>
+        <li><strong>Bebidas de Firmeza:</strong> Marafo (cachaça tradicional), gim ou bebidas destiladas de sabor forte e seco.</li>
+        <li><strong>Elementos de Defumação e Ervas:</strong> Arruda, guiné, pinhão-roxo, folhas de fumo e quebra-demanda.</li>
+        <li><strong>Guias (Colares Litúrgicos):</strong> Contas pretas e vermelhas intercaladas (geralmente de sete em sete), ou cordões de aço que representam os caminhos de ferro e as linhas de trem.</li>
+        <li><strong>Símbolos de Poder:</strong> O Tridente (regência sobre o plano material, mental e espiritual) e a Chave (poder conferido para abrir caminhos ou fechar portais de negatividade).</li>
+      </ul>
+
+      <h3>6. Ponto Cantado e Oração</h3>
+      <h4>Ponto Cantado (Evocação)</h4>
+      <div class="highlight">
+        "Exu Tiriri, Lanajô!<br>
+        Vem de Aruanda para trabalhar!<br>
+        Ele é capitão da encruzilhada,<br>
+        Ele é ordenança de Ogum Megê!<br>
+        Laroyê, Exu! Exu é Mojubá!<br>
+        Seu Tiriri vem os caminhos abrir!"
+      </div>
+
+      <h4>Oração de Proteção e Descarrego</h4>
+      <div class="highlight">
+        "Senhor Exu Tiriri, guardião supremo das encruzilhadas e fiel executor da justiça dos Orixás. Rogamos que, com sua capa de proteção, cubra nossos corpos e nossa casa, afastando a inveja, o feitiço, o olho-grande e a discórdia.<br><br>
+        Com o seu tridente sagrado, quebre as demandas direcionadas a nós e abra os caminhos da nossa vida material e espiritual. Traga-nos a sua alegria e a sua firmeza para que possamos caminhar sem vacilar.<br><br>
+        Laroyê, Exu Tiriri! Exu é Mojubá!"
+      </div>
+
+      <h3>7. Perspectivas Plurais sobre a Entidade</h3>
+      <h4>A Visão de Terreiro (Prática Doutrinária)</h4>
+      <p>É a vivência mística diária. Nos terreiros de Umbanda, Tiriri é tido como o amigo leal da casa e dos médiuns. Ele costuma ser o primeiro Exu a ser firmado para garantir que a gira corra em absoluta segurança astromagnética. Suas consultas são conhecidas por irem direto ao ponto, unindo acolhimento com puxões de orelha necessários.</p>
+
+      <h4>A Visão Esotérica (Universalista)</h4>
+      <p>Sob a ótica do esoterismo e da alta magia, Exu Tiriri é interpretado como um Agente de Execução Cármica. Ele atua na psicosfera densa da Terra transmutando energias de baixo padrão vibratório em luz. Representa o arquétipo do "Equilibrador Universal", garantindo que a balança cósmica da ação e reação permaneça em harmonia.</p>
+
+      <h4>A Visão Acadêmica (Antropológica)</h4>
+      <p>Para os cientistas sociais e historiadores, as falanges de Exu — e em especial a de Tiriri — refletem a riquíssima sinergia cultural do Brasil. A transição de um espírito de origem fidalga e europeia para um guardião das encruzilhadas brasileiras ilustra a resistência das religiões de matriz africana. Elas ressignificaram os símbolos do colonizador para criar uma divindade próxima do povo, defensora dos marginalizados e promotora da justiça social.</p>
+
+      <h3>8. Mensagem de Reflexão do Guardião</h3>
+      <div class="highlight">
+        "Eu sou aquele que limpa o chão para você passar. Mas lembre-se sempre: eu posso abrir a porta, mas quem tem a obrigação de caminhar é você. Firme o seu passo, limpe o seu coração de toda a maldade e não tema a escuridão da noite, pois a minha luz vigia silenciosamente a sua jornada."
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== O QUE É UMBANDA ===== -->
+  <section id="umbanda">
+    <div class="container-narrow text-content">
+      <h2 class="section-title">O que é Umbanda?</h2>
+      <div class="divider"></div>
+
+      <p>A Umbanda é uma religião de matriz afro-brasileira surgida no início do século 20, que resulta da união das crenças dos povos africanos como o candomblé, da doutrina espírita proveniente da Europa, mais especificamente da França e da religião cristã que veio com os colonizadores portugueses para o Brasil.</p>
+
+      <p>O significado do nome varia um pouco de acordo com a fonte, mas acredita-se que a palavra Umbanda pertença ao vocabulário quimbundo da Angola, que significa "magia" e "arte de curar". Ela apresenta algumas variações em cada centro, tenda ou terreiro, pois não sendo uma religião com regras imutáveis ou um livro único que a rege. Ela possui vertentes distintas, onde algumas são mais cristãs, outras mais próximas do candomblé, e outras que percorrem um caminho novo, entre elas estão: a Umbanda tradicional, a mista, a esotérica, a sagrada e a astrológica. Mas todas são guiadas pela fé nos orixás, na imortalidade da alma, a fé nos espíritos, e a caridade.</p>
+
+      <h3>Como surgiu a Umbanda?</h3>
+      <p>A Umbanda surgiu oficialmente em 15 de novembro de 1908, tendo sido anunciada pelo médium Zélio Fernandino de Moraes (1891-1975). No início do século 20, Zélio ainda jovem já apresentava habilidades mediúnicas e frequentava o centro espírita de sua cidade. Em um determinado dia seu guia pessoal, o Caboclo das Sete Encruzilhadas baixou nele durante uma sessão nesse centro espírita, porém para doutrina espírita kardecista esse tipo de espírito não é evoluído e, portanto, não poderia estar ali na sessão mediúnica deles. E por isso pediram que a entidade fosse embora.</p>
+
+      <p>Após esse episódio Zélio, recebendo instruções de seu Caboclo, inaugurou a religião conhecida como Umbanda, e abriu a primeira tenda umbandista chamada Tenda Espírita Nossa Senhora da Piedade, na cidade de São Gonçalo no Rio de Janeiro. E nessa nova religião espíritos como os de índios, velhos que foram escravos, marinheiros e boiadeiros, que em vida foram sempre colocados às margens da sociedade têm seu espaço e sua importância, e com seu conhecimento terreno e espiritual têm permissão para ajudar e aconselhar os vivos.</p>
+
+      <h3>Princípios da Umbanda</h3>
+      <p>A Umbanda tem como seus princípios a luz, a caridade e o amor. E sua forma de trabalho para esse fim é realizada através de ritos chamados giras, que envolvem músicas cantadas e tocadas com atabaques chamadas de pontos, o uso de velas, ervas, oferendas, passes para purificação energética, batismo, defumação, pontos riscados e descarrego, que são limpezas energéticas com objetivo de liberar a pessoa da influência de um espiritual mal intencionado, popularmente conhecido como encosto.</p>
+
+      <p>Assim como a característica pela qual a religião é mais conhecida e mal interpretada, a incorporação dos médiuns por espíritos e entidades. Na Umbanda, ao contrário do candomblé, os orixás não incorporam nas pessoas, pois segundo a Umbanda eles são feitos de energias muito mais poderosas do que uma pessoa poderia aguentar, e é aí que entram as 7 linhas da Umbanda. Em cada uma das 7 linhas, existem espíritos que trabalham com as características de determinado Orixá, de maneira que a incorporação nos médiuns é feita por um desses espíritos que assumem a face de um tipo de espírito, como o marinheiro, o caboclo, a pomba-gira e assim por diante.</p>
+
+      <h3>O que é sincretismo religioso?</h3>
+      <p>Sincretismo é a fusão ou mistura de filosofias, de ideologias, de sistemas sociais ou de elementos culturais diversos. Assim o sincretismo religioso nada mais é do que a mistura entre religiões, fundando por vezes uma nova religião, ou às vezes simplesmente mudando duas já existentes.</p>
+
+      <p>No contexto da Umbanda, que é uma religião fundada a partir da união de crenças de três religiões anteriores, o sincretismo acontece fortemente e é muito conhecido no que concerne suas entidades de adoração. A Umbanda é uma religião que possui elementos do candomblé e do cristianismo e para entender como essas duas doutrinas se uniram precisamos olhar para a história do Brasil.</p>
+
+      <p>Após a descoberta do país e a tentativa falha de tentar escravizar os povos indígenas que aqui viviam, os portugueses trouxeram mão-de-obra escrava da África. E o tratamento dispensado às pessoas escravizadas visava apagar qualquer traço de seu passado, de suas crenças e identidade e qualquer coisa que pudesse lhes dar força para se revoltar, esperança ou criar laços com outros escravizados. Entre essas tentativas de apagamentos de sua cultura estava a proibição de manter seus cultos religiosos originais, e quando isso acontecia eles eram severamente punidos.</p>
+
+      <p>Então para conseguirem manter sua fé e continuar a adorar seus deuses, os escravizados passaram a disfarçar suas entidades em santos católicos que possuíam características similares. Alguns exemplos são Yansã e Santa Bárbara que regem os trovões e as tempestades, Ogum e São Jorge que são guerreiros, e Oxalá e Jesus que trazem a energia de amor e paz. Assim não é incomum até hoje ao entrar em uma tenda de Umbanda ver no altar santos católicos, pois se antes isso era feito para disfarçar, hoje para os umbandistas, que têm sua religião como fruto do sincretismo, os dois são a representação da mesma energia.</p>
+    </div>
+  </section>
+
+  <!-- ===== ORIXÁS ===== -->
+  <section id="orixas">
+    <div class="container">
+      <h2 class="section-title">Orixás</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Divindades que regem as forças da natureza e os caminhos da vida.</p>
+      <div class="entities-grid">
+
+        <div class="entity-card">
+          <img class="card-img" src="images/Oxalá.png" alt="Oxalá" loading="lazy">
+          <div class="card-body">
+            <h3>Oxalá</h3>
+            <div class="role">Linha Religiosa</div>
+            <p>A linha religiosa é regida pelo orixá Oxalá, o orixá de maior importância. Seu elemento é o cristal e sua cor é o branco, que representa a paz maior, o espiritual. No sincretismo Oxalá se apresenta como Jesus Cristo.</p>
+            <p>A linha religiosa é composta por entidades como os pretos-velhos e os caboclos. Essa linha representa o princípio, aquilo que ainda não foi criado, a fé, a religiosidade e o reflexo de Deus.</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <img class="card-img" src="images/iemanja.png" alt="Iemanjá" loading="lazy">
+          <div class="card-body">
+            <h3>Iemanjá</h3>
+            <div class="role">Povo d'Água</div>
+            <p>A linha do povo d'água é regida por Yemanjá, a mãe das águas do mar. Seu elemento é a água e sua cor é o azul claro. No sincretismo Yemanjá se torna Nossa Senhora da Conceição.</p>
+            <p>A linha é composta por ondinas, sereias, iaras, caboclas dos rios e marinheiros. Yemanjá representa a energia geradora, o eterno feminino, a mãe do universo e da Umbanda.</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <img class="card-img" src="images/Ogum.png" alt="Ogum" loading="lazy">
+          <div class="card-body">
+            <h3>Ogum</h3>
+            <div class="role">Linha das Demandas</div>
+            <p>Ogum é o soldado, guardião, o patrono dos exércitos. Representa a luta e a vitória. Personalidade dura e justiceira, aquele que vem para executar a Lei. No sincretismo, Ogum representa São Jorge da Capadócia.</p>
+            <p>Suas cores são vermelho e branco. Seu dia da semana é terça-feira. Sua saudação é "Ogunhê, Meu Pai".</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <img class="card-img" src="images/Oxóssi.png" alt="Oxóssi" loading="lazy">
+          <div class="card-body">
+            <h3>Oxóssi</h3>
+            <div class="role">Linha dos Caboclos</div>
+            <p>A linha dos caboclos é regida por Oxóssi, o caçador e senhor das matas. Seu elemento é o vegetal e sua cor é o verde. No sincretismo Oxóssi se torna São Sebastião.</p>
+            <p>A linha de Oxóssi é composta por caboclos e caboclas, assim como boiadeiros. É muito focada no conhecimento e suas entidades falam de forma firme, mas calma.</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <img class="card-img" src="images/Xangô.png" alt="Xangô" loading="lazy">
+          <div class="card-body">
+            <h3>Xangô</h3>
+            <div class="role">Orixá da Justiça</div>
+            <p>Xangô é o orixá da justiça, dos trovões, dos raios, da virilidade, da dança e do fogo. É conhecido por sua defesa dos oprimidos. Suas cores são vermelho e marrom. No sincretismo é associado a São João Batista ou São Jerônimo.</p>
+            <p>Seu símbolo é o machado (Oxé). Sua saudação é "Kaô Kabecilê!"</p>
+          </div>
+        </div>
+
+        
+        <div class="entity-card">
+          <img class="card-img" src="images/Oxum.png" alt="Oxum" loading="lazy">
+          <div class="card-body">
+            <h3>Oxum</h3>
+            <div class="role">Senhora das Águas Doces</div>
+            <p>Oxum é a Orixá das águas doces, senhora dos rios, cachoeiras, do amor, da fertilidade e da beleza. Ela rege as emoções, a riqueza interior e a maternidade. Sua energia conecta-se ao chacra cardíaco, e sua saudação é "Ora yê yê ô".</p>
+            <p>Reina sobre as águas doces em movimento, o ouro e a fertilidade. Seus símbolos incluem o abebê (um leque com espelho) e suas cores são o dourado e o amarelo. Na Umbanda, ela lidera a "Linha de Oxum", que abriga entidades como Caboclos e Caboclas de Oxum que trabalham com amor, cura e desobsessão.</p>
+          </div>
+        </div>
+<div class="entity-card">
+          <img class="card-img" src="images/Nanã.png" alt="Nanã" loading="lazy">
+          <div class="card-body">
+            <h3>Nanã</h3>
+            <div class="role">Mãe Ancestral</div>
+            <p>Nanã é a orixá mais antiga, associada à água parada, aos pântanos, à terra úmida e ao barro. É considerada a divindade da origem do homem na Terra e dos portais entre a vida e a morte.</p>
+            <p>É vista como a matriarca, a senhora dos idosos, representando a sabedoria e o saber ancestral. No sincretismo é associada a Santa Ana.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MENTORES ===== -->
+  <section id="mentores">
+    <div class="container">
+      <h2 class="section-title">Mentores da Umbanda</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Guias espirituais que trabalham nas diferentes linhas para auxiliar a humanidade.</p>
+      <div class="entities-grid">
+
+        <div class="entity-card">
+          <img class="card-img" src="images/Caboclos.png" alt="Caboclos" loading="lazy">
+          <div class="card-body">
+            <h3>Caboclos</h3>
+            <div class="role">Mestres da Sabedoria</div>
+            <p>Os Caboclos são espíritos de indígenas e mestiços, considerados os grandes mestres e mentores espirituais da Umbanda. Conhecidos por sua profunda sabedoria, força e conexão com a natureza, eles atuam no passe, na cura e na quebra de demandas.</p>
+            <p>Suas cores predominantes são o verde e o branco. Costumam receber oferendas na mata. Ao incorporar, manifestam-se emitindo um grito característico (o brado ou oké).</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <img class="card-img" src="images/Pretos Velhos.png" alt="Pretos Velhos" loading="lazy">
+          <div class="card-body">
+            <h3>Pretos Velhos</h3>
+            <div class="role">Sabedoria Ancestral</div>
+            <p>São espíritos de sabedoria ancestral que viveram como escravizados ou descendentes. Simbolizam a humildade, a cura, a resiliência e o amor. Guiam os consulentes através de passes com água fluidificada, benzimentos com ramos de arruda e conselhos serenos.</p>
+            <p>Apresentam-se como idosos africanos de fala calma e mansa. Utilizam o cachimbo ou o fumo para transmutar energias negativas. Sua saudação é "Adorei as almas!".</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <img class="card-img" src="images/Erês.png" alt="Erês" loading="lazy">
+          <div class="card-body">
+            <h3>Erês (Crianças)</h3>
+            <div class="role">Pureza e Alegria</div>
+            <p>Os Erês são espíritos que se manifestam com a energia e a inocência de crianças. Atuam como mensageiros e trabalhadores espirituais que trazem cura, alegria, renovação e amor puro. Geralmente associados à linha de Ibeji.</p>
+            <p>Suas giras são marcadas por muita cor, música animada e brincadeiras. Adoram doces, bolos, balas e brinquedos. São excelentes conselheiros espirituais que ensinam a perdoar e a enxergar a vida com mais leveza.</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <img class="card-img" src="images/Marinheiros.png" alt="Marinheiros" loading="lazy">
+          <div class="card-body">
+            <h3>Marinheiros</h3>
+            <div class="role">Povo d'Água</div>
+            <p>Os Marinheiros são espíritos do "povo d'água", que trabalham principalmente na irradiação de Iemanjá e Oxum. Atuam na limpeza espiritual, no equilíbrio emocional e no auxílio contra vícios.</p>
+            <p>Utilizam contas em tons de azul claro e branco. Suas oferendas incluem fitas, âncoras, água do mar, limão, conchas e bebidas como cachaça ou água de coco.</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <img class="card-img" src="images/Boiadeiros.png" alt="Boiadeiros" loading="lazy">
+          <div class="card-body">
+            <h3>Boiadeiros</h3>
+            <div class="role">Guardiões do Campo</div>
+            <p>Os Boiadeiros são espíritos de vaqueiros e sertanejos que atuam na proteção, limpeza energética e quebra de demandas espirituais. Trabalham principalmente na linha de Oxóssi como grandes guardiões.</p>
+            <p>São entidades de poucas palavras e muita ação. Usam chicotes (para limpeza de energias densas) e laços (para prender e encaminhar espíritos obsessores). Sua saudação é "Marrumbá chetuá, Boiadeiro!".</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <img class="card-img" src="images/Baianos.png" alt="Baianos" loading="lazy">
+          <div class="card-body">
+            <h3>Baianos</h3>
+            <div class="role">Linha das Almas</div>
+            <p>Os baianos formam uma falange espiritual alegre e acolhedora, ligada à Linha das Almas. Transmitem sabedoria popular, resiliência e quebram demandas com firmeza. Suas giras são conhecidas pelo alto-astral.</p>
+            <p>Comunicação direta, sem rodeios, focada em resolver problemas amorosos, espirituais e cotidianos. Utilizam o bom humor, a dança e passes dinâmicos para afastar a negatividade e o desânimo.</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <img class="card-img" src="images/ciganos.png" alt="Ciganos" loading="lazy">
+          <div class="card-body">
+            <h3>Ciganos</h3>
+            <div class="role">Linha do Oriente</div>
+            <p>Os espíritos ciganos pertencem à Linha do Oriente. Atuam com foco na alegria, liberdade, prosperidade e cura, guiando os consulentes a transformar destinos estagnados.</p>
+            <p>Suas giras são marcadas por danças fluidas, leques, fitas coloridas e oferendas com frutas, flores e moedas. São reverenciados como andarilhos da sabedoria que ensinam a assumir o controle da própria vida e atrair prosperidade.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXUS ===== -->
+  <section id="exus">
+    <div class="container">
+      <h2 class="section-title">Exus</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Guias de Lei com vibrações densas, guardiões das passagens entre dimensões.</p>
+
+      <h3 class="group-title">Linha dos Exus</h3>
+      <div class="entities-grid">
+
+        <div class="entity-card">
+          <img class="card-img" src="images/EXU CAPA PRETA.png" alt="Exu Capa Preta" loading="lazy">
+          <div class="card-body">
+            <h3>Exu Capa Preta</h3>
+            <div class="role">Guardião das Encruzilhadas</div>
+            <p>Poderosa entidade conhecida como o guardião das encruzilhadas. Atua desfazendo demandas, quebrando feitiços e protegendo seus devotos com o seu manto sagrado. Sua famosa capa funciona como um portal ou escudo espiritual, capaz de cobrir tudo, "só não cobrindo a falsidade". Pertencente à falange dos guardiões, é muito ligado à cura e à resolução de trabalhos espirituais complexos.</p>
+            <p>Oferendas comuns: charutos, marafo (cachaça), conhaque ou vinho tinto, padê e carne de porco. Ponto Cantado: "Seu Capa Preta, me cubra com sua capa... Sua capa cobre tudo, só não cobre a falsidade."</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <img class="card-img" src="images/EXU SETE ENCRUSILHADAS.png" alt="Exu Sete Encruzilhadas" loading="lazy">
+          <div class="card-body">
+            <h3>Exu Sete Encruzilhadas</h3>
+            <div class="role">Rei das Encruzilhadas</div>
+            <p>Uma das entidades mais respeitadas e poderosas da Umbanda. Chefe supremo de falange, governa os caminhos, as encruzilhadas e a comunicação entre o mundo espiritual e o material. Domina as encruzilhadas — o ponto onde os caminhos se cruzam — sendo responsável por abrir portas profissionais, financeiras e pessoais. É considerado um diplomata espiritual devido à sua forte ligação com Ogum e Oxalá.</p>
+            <p>Saudação: "Laroyê Exu! Exu Mojubá!" — Dia: Segundas-feiras. Oferendas: Velas pretas e vermelhas, charutos, cachaça, moedas e chaves.</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <img class="card-img" src="images/Exu tranca ruas.png" alt="Exu Tranca Ruas" loading="lazy">
+          <div class="card-body">
+            <h3>Exu Tranca Ruas</h3>
+            <div class="role">Guardião dos Caminhos</div>
+            <p>Uma das entidades mais cultuadas na Umbanda, conhecido como o guardião dos caminhos. Atua na abertura e fechamento de portais espirituais, protegendo seus devotos contra energias nocivas, desmanchando demandas e promovendo escolhas conscientes. É o mestre das encruzilhadas, simbolizando o momento de tomada de decisões e o trânsito entre o mundo material e espiritual.</p>
+            <p>Cores: Preto e vermelho. Ferramentas: Tridente e chaves. Saudaçao: "Laroyê, Exu Tranca Ruas!" Oferendas: Bebidas destiladas (cachaça, conhaque ou uísque) e charutos.</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <img class="card-img" src="images/Exu ze caveira.png" alt="Exu Zé Caveira" loading="lazy">
+          <div class="card-body">
+            <h3>Exu Zé Caveira</h3>
+            <div class="role">Guardião da Transformação</div>
+            <p>Guardião poderoso ligado à linha das almas e aos mistérios da vida e da morte. Atua como um espírito de grande sabedoria que auxilia na quebra de orgulho, na quebra de demandas e no direcionamento de espíritos. Trabalha diretamente na transformação e renovação espiritual. Na Umbanda, a falange do Exu Caveira atua sob a regência do Orixá Obaluaê, sendo considerada uma força de amparo e transição.</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <img class="card-img" src="images/Exu ze pilintra.png" alt="Zé Pilintra" loading="lazy">
+          <div class="card-body">
+            <h3>Zé Pilintra</h3>
+            <div class="role">Chefe da Linha dos Malandros</div>
+            <p>Maior representante da Linha dos Malandros, uma falange espiritual que representa a sabedoria das ruas e a astúcia para vencer as adversidades. Carrega traços culturais brasileiros, transitando entre os arquétipos do boêmio, do trabalhador informal e do homem da noite. Utiliza a inteligência, o "jogo de cintura" e a sagacidade para orientar os consulentes, quebrando demandas e ensinando a lidar com as dificuldades sociais e materiais.</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <img class="card-img" src="images/Exu mirins.png" alt="Exus Mirins" loading="lazy">
+          <div class="card-body">
+            <h3>Exus Mirins</h3>
+            <div class="role">Guardiões Mirins</div>
+            <p>Linha de trabalho composta por espíritos que se apresentam com aparência infantil, mas que atuam na "linha da esquerda". Diferentemente dos Erês (que trazem doçura), Exu Mirim é conhecido pela sua irreverência, sagacidade e rapidez. Possuem grande poder de magia e atuam como "espiões" espirituais, circulando por locais astrais densos e trazendo soluções rápidas para problemas travados.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <h3 class="group-title">Linha das Pombagiras</h3>
+      <div class="entities-grid">
+
+        <div class="entity-card">
+          <img class="card-img" src="images/Maria Mulambo.png" alt="Maria Mulambo" loading="lazy">
+          <div class="card-body">
+            <h3>Maria Mulambo</h3>
+            <div class="role">Rainha do Renascimento</div>
+            <p>Uma das entidades mais respeitadas na linha de frente das Pombagiras. Lida diretamente com a dor humana e com as grandes quedas espirituais ou materiais. Atua na transmutação e limpeza pesada, retirando o ser humano do sofrimento extremo como depressão, vícios, ruína financeira e obsessões complexas. "Recolhe o lixo espiritual" e limpa o campo energético de seus protegidos.</p>
+            <p>Cores: Preto e dourado. Oferendas: Licores e espumantes, cigarros longos, farofas ricas e rosas abertas sem espinhos.</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <img class="card-img" src="images/Maria Navalha.png" alt="Maria Navalha" loading="lazy">
+          <div class="card-body">
+            <h3>Maria Navalha</h3>
+            <div class="role">Força da Malandragem</div>
+            <p>Símbolo máximo da mulher livre e autossuficiente. Incorpora na Linha dos Malandros e também trabalha sob a firmeza de Pombagira. Atua na proteção contra perigos físicos e espirituais, quebra de demandas e fortalecimento do amor-próprio. Rege as injustiças da vida urbana e cuida das pessoas marginalizadas ou perseguidas pelas ruas.</p>
+            <p>Cores: Branco e vermelho. Oferendas: Petiscos, camarão, farofa de carne seca, cravos vermelhos, cigarros e bebidas claras.</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <img class="card-img" src="images/Pomba Gira Cigana.png" alt="Pomba Gira Cigana" loading="lazy">
+          <div class="card-body">
+            <h3>Pomba Gira Cigana</h3>
+            <div class="role">Dona do Destino</div>
+            <p>Une a força e a firmeza da Pombagira com a sabedoria mágica e a evolução espiritual do Povo Cigano. Atua na vidência, intuição aguçada, liberdade, quebra de amarras mentais e caminhos de fartura. Ajuda as pessoas a lerem suas próprias vidas com clareza, ensinando a tomar decisões baseadas na sabedoria e não no impulso.</p>
+            <p>Cores: Vermelho, amarelo, azul, verde e dourado. Oferendas: Frutas doces, mel, vinho licoroso, incensos, pães, baralhos e moedas.</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <img class="card-img" src="images/Pomba Gira Dama da Noite.png" alt="Dama da Noite" loading="lazy">
+          <div class="card-body">
+            <h3>Dama da Noite</h3>
+            <div class="role">Senhora da Noite</div>
+            <p>Falange espiritual de entidades elegantíssimas que trabalham na linha da rua e dos cruzeiros. Atuam transformando energias negativas em caminhos abertos. Ajudam em problemas amorosos, financeiros, injustiças e na quebra de feitiços. Apresentam-se com postura altiva, educada e misteriosa, vestindo longos vestidos luxuosos.</p>
+            <p>Cores: Preto e dourado ou preto e vermelho. Oferendas: Champanhe, licores finos, rosas vermelhas sem espinhos, joias douradas e leques.</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <img class="card-img" src="images/Rosa Caveira.png" alt="Rosa Caveira" loading="lazy">
+          <div class="card-body">
+            <h3>Rosa Caveira</h3>
+            <div class="role">Guardiã da Calunga</div>
+            <p>Chefe de uma das falanges mais sérias e temidas do plano astral. Trabalha em parceria íntima com o Exu Caveira na transição espiritual. Atua no resgate de almas perdidas, combate severo a magos negros, desobsessão pesada e quebra de amarrações negativas. Rege o mistério da vida e da morte, desfazendo ilusões materiais.</p>
+            <p>Cores litúrgicas: Preto, roxo e amarelo. Oferendas: Vinho tinto seco, cigarros fortes, rosas amarelas ou vermelhas escuras.</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <img class="card-img" src="images/Sete Saias.png" alt="Sete Saias" loading="lazy">
+          <div class="card-body">
+            <h3>Sete Saias</h3>
+            <div class="role">Senhora da Prosperidade</div>
+            <p>Uma das entidades mais versáteis, trabalha intensamente na abertura de caminhos financeiros, atração de clientes, sorte, amor sadio, união familiar e cura emocional. Cada uma de suas sete saias representa um mistério, um portal energético ou uma linha de atuação no plano astral. É extremamente alegre, festeira e adora dançar em roda para dissipar energias densas.</p>
+            <p>Cores: Vermelha, preta e dourada. Oferendas: Champanhe, licores doces, cigarros mentolados, perfumes, bijuterias douradas e fitas coloridas.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LINHAS DA UMBANDA ===== -->
+  <section id="linhas">
+    <div class="container">
+      <h2 class="section-title">Linhas da Umbanda</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Conheça as sete linhas, suas legiões e falanges que compõem a estrutura espiritual da Umbanda.</p>
+      <div class="entities-grid">
+
+        <div class="entity-card">
+          <img class="card-img" src="images/LinhadeIori-0.jpeg" alt="Linha de Iori" loading="lazy">
+          <div class="card-body">
+            <h3>Linha de Iori</h3>
+            <div class="role">Linha das Crianças</div>
+            <p>A linha das crianças é conhecida por Iori, ou linha de Ibeji, que são os correspondentes do candomblé aos irmãos Cosme e Damião. Essas entidades simbolizam a pureza, a bondade e inocência da infância. É a linha do amor, da renovação e da evolução.</p>
+            <p>Seu elemento é o fogo e sua cor é o rosa. No sincretismo há uma ligação com São Cosme e Damião. A linha de Iori é composta pelos erês, crianças de todas as raças que, apesar de se comportarem como crianças pequenas, são altamente evoluídas e distribuem conselhos profundos e sábios.</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <img class="card-img" src="images/LinhadeIorim-0.jpeg" alt="Linha de Iorimé" loading="lazy">
+          <div class="card-body">
+            <h3>Linha de Iorimé</h3>
+            <div class="role">Linha das Almas</div>
+            <p>A linha das almas é regida por Iorimé, uma energia que carrega o amor, a compreensão, a humildade e a sabedoria, consolando os aflitos e reanimando os fracos. É a linha dos famosos pretos-velhos, designada a combater o mal sempre que ele se manifesta.</p>
+            <p>Seu elemento é a terra. Sua cor é o violeta, que representa a sabedoria e a tranquilidade. No sincretismo é associada a São Benedito. A linha é composta por idosos negros de todas as nações, que se manifestam falando lentamente com maneiras antigas, sempre muito carinhosos.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GUIAS DA UMBANDA E SUAS CORES ===== -->
+  <section id="guias">
+    <div class="container-narrow text-content">
+      <h2 class="section-title">Guias da Umbanda e suas Cores</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">As guias (colares litúrgicos) são fundamentais na Umbanda, representando a proteção, a vibração e a identificação das entidades.</p>
+
+      <div class="guias-table-wrapper">
+        <table class="guias-table">
+          <thead>
+            <tr>
+              <th>Entidade / Linha</th>
+              <th>Cores da Guia</th>
+              <th>Significado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td data-label="Entidade">Oxalá</td><td data-label="Cores"><span class="swatch" style="background:#fff;border:1px solid #ccc"></span> Branco</td><td data-label="Significado">Paz, sabedoria, amor incondicional</td></tr>
+            <tr><td data-label="Entidade">Ogum</td><td data-label="Cores"><span class="swatch" style="background:#cc0000"></span> Vermelho</td><td data-label="Significado">Força, luta, lei e ordem</td></tr>
+            <tr><td data-label="Entidade">Oxóssi / Caboclos</td><td data-label="Cores"><span class="swatch" style="background:#008000"></span> Verde</td><td data-label="Significado">Esperança, conhecimento, cura, prosperidade</td></tr>
+            <tr><td data-label="Entidade">Xangô</td><td data-label="Cores"><span class="swatch" style="background:#8B4513"></span> Marrom</td><td data-label="Significado">Justiça, processos, equilíbrio</td></tr>
+            <tr><td data-label="Entidade">Iemanjá / Marinheiros</td><td data-label="Cores"><span class="swatch" style="background:#1E90FF"></span> Azul</td><td data-label="Significado">Paz, geração, fartura, calma</td></tr>
+            <tr><td data-label="Entidade">Oxum</td><td data-label="Cores"><span class="swatch" style="background:#0000CD"></span> Azul escuro</td><td data-label="Significado">Amor, fecundidade, beleza</td></tr>
+            <tr><td data-label="Entidade">Iansã</td><td data-label="Cores"><span class="swatch" style="background:#FFD700"></span> Amarelo</td><td data-label="Significado">Força, vitalidade, ação</td></tr>
+            <tr><td data-label="Entidade">Nanã</td><td data-label="Cores"><span class="swatch" style="background:#800080"></span> Lilás / Roxo</td><td data-label="Significado">Sabedoria ancestral, passagem</td></tr>
+            <tr><td data-label="Entidade">Obaluayê / Omulu / Yorimá</td><td data-label="Cores"><span class="swatch" style="background:#222"></span><span class="swatch" style="background:#fff;border:1px solid #ccc"></span> Preto e branco</td><td data-label="Significado">Cura, saúde, doença, transmutação</td></tr>
+            <tr><td data-label="Entidade">Ibeji / Yori / Crianças</td><td data-label="Cores"><span class="swatch" style="background:#FF69B4"></span><span class="swatch" style="background:#87CEEB"></span> Rosa e azul claro</td><td data-label="Significado">Alegria, inocência, pureza</td></tr>
+            <tr><td data-label="Entidade">Exus</td><td data-label="Cores"><span class="swatch" style="background:#000"></span><span class="swatch" style="background:#cc0000"></span> Preto e vermelho</td><td data-label="Significado">Proteção, abertura de caminhos, transformação</td></tr>
+            <tr><td data-label="Entidade">Pombagira</td><td data-label="Cores"><span class="swatch" style="background:#cc0000"></span> Vermelho</td><td data-label="Significado">Amor, paixão, empoderamento</td></tr>
+            <tr><td data-label="Entidade">Baianos</td><td data-label="Cores"><span class="swatch" style="background:#FFD700"></span> Amarelo</td><td data-label="Significado">Prosperidade, alegria</td></tr>
+            <tr><td data-label="Entidade">Boiadeiros</td><td data-label="Cores"><span class="swatch" style="background:#8B4513"></span><span class="swatch" style="background:#008000"></span> Marrom e verde</td><td data-label="Significado">Força, determinação, limpeza</td></tr>
+            <tr><td data-label="Entidade">Ciganos</td><td data-label="Cores"><span class="swatch" style="background:#FFD700"></span><span class="swatch" style="background:#cc0000"></span><span class="swatch" style="background:#008000"></span> Dourado, vermelho, verde</td><td data-label="Significado">Liberdade, prosperidade, intuição</td></tr>
+            <tr><td data-label="Entidade">Malandros</td><td data-label="Cores"><span class="swatch" style="background:#fff;border:1px solid #ccc"></span><span class="swatch" style="background:#cc0000"></span> Branco e vermelho</td><td data-label="Significado">Malícia, proteção, alegria</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AS 7 VIBRAÇÕES DA UMBANDA ===== -->
+  <section id="vibracoes">
+    <div class="container-narrow text-content">
+      <h2 class="section-title">As 7 Vibrações da Umbanda</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">As vibrações representam as diferentes frequências espirituais que compõem o universo umbandista.</p>
+
+      <div class="image-grid">
+        <div>
+          <img src="images/vibracoes-0.png" alt="Vibrações 1" loading="lazy">
+        </div><p></p>
+        <div>
+          <img src="images/vibracoes-1.png" alt="Vibrações 2" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMEMORAÇÕES ===== -->
+  <section id="comemoracoes">
+    <div class="text-content">
+      <h2 class="section-title">Calendário de Comemorações</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Datas importantes e celebrações no calendário umbandista.</p>
+
+      <div class="calendario-wrapper">
+        <table class="calendario-table">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Divindade / Entidade</th>
+              <th>Sincretismo Católico</th>
+              <th>Elemento / Domínio</th>
+              <th>Saudação</th>
+              <th>Cor da Vela</th>
+              <th>Oferendas Comuns</th>
+              <th>Linha de Trabalho</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td data-label="Data">20 Jan</td><td data-label="Divindade">Oxóssi</td><td data-label="Sincretismo">São Sebastião</td><td data-label="Elemento">Matas e Florestas</td><td data-label="Saudação">Okê Arô!</td><td data-label="Vela">Verde</td><td data-label="Oferendas">Frutas variadas, milho cozido com coco, vinho tinto</td><td data-label="Linha">Caboclos e Caboclas</td></tr>
+            <tr><td data-label="Data">20 Jan</td><td data-label="Divindade">Caboclos</td><td data-label="Sincretismo">São Sebastião</td><td data-label="Elemento">Matas e Florestas</td><td data-label="Saudação">Okê Arô!</td><td data-label="Vela">Verde</td><td data-label="Oferendas">Frutas, milho cozido, vinho tinto</td><td data-label="Linha">Caboclos</td></tr>
+            <tr><td data-label="Data">02 Fev</td><td data-label="Divindade">Iemanjá</td><td data-label="Sincretismo">N. Sra. dos Navegantes</td><td data-label="Elemento">Mar e Oceanos</td><td data-label="Saudação">Odoyá! / Erubé!</td><td data-label="Vela">Azul Claro ou Branca</td><td data-label="Oferendas">Manjar branco, peixe assado, champanhe branca, flores</td><td data-label="Linha">Marinheiros e Sereias</td></tr>
+            <tr><td data-label="Data">02 Fev</td><td data-label="Divindade">Marinheiros</td><td data-label="Sincretismo">N. Sra. dos Navegantes</td><td data-label="Elemento">Mar e Oceanos</td><td data-label="Saudação">Odoyá!</td><td data-label="Vela">Azul claro / Branca</td><td data-label="Oferendas">Manjar, peixe, champanhe, flores</td><td data-label="Linha">Marinheiros</td></tr>
+            <tr><td data-label="Data">02 Fev</td><td data-label="Divindade">Baianos</td><td data-label="Sincretismo">Nosso Senhor do Bonfim</td><td data-label="Elemento">Fé e alegria</td><td data-label="Saudação">Salve a Bahia!</td><td data-label="Vela">Amarela</td><td data-label="Oferendas">Acarajé, farofa, água de coco, cachaça</td><td data-label="Linha">Baianos</td></tr>
+            <tr><td data-label="Data">23 Abr</td><td data-label="Divindade">Ogum</td><td data-label="Sincretismo">São Jorge</td><td data-label="Elemento">Caminhos e Metais</td><td data-label="Saudação">Patakori Ogum! / Ogunhê!</td><td data-label="Vela">Azul Escuro ou Vermelha</td><td data-label="Oferendas">Feijoada, inhame assado, cerveja branca</td><td data-label="Linha">Guerreiros e Soldados</td></tr>
+            <tr><td data-label="Data">13 Mai</td><td data-label="Divindade">Pretos Velhos</td><td data-label="Sincretismo">Dia da Abolição</td><td data-label="Elemento">Ancestralidade</td><td data-label="Saudação">Adorei as Almas!</td><td data-label="Vela">Preta e Branca ou Café</td><td data-label="Oferendas">Café sem açúcar, bolo de fubá, fumo de rolo, cachaça</td><td data-label="Linha">Pretos e Pretas Velhas</td></tr>
+            <tr><td data-label="Data">24 Mai</td><td data-label="Divindade">Ciganos</td><td data-label="Sincretismo">Santa Sara Kali</td><td data-label="Elemento">Liberdade e dança</td><td data-label="Saudação">Optchá!</td><td data-label="Vela">Laranja</td><td data-label="Oferendas">Fitas, moedas, vinhos, frutas, pães, mel, perfumes</td><td data-label="Linha">Ciganos</td></tr>
+            <tr><td data-label="Data">30 Mai</td><td data-label="Divindade">Obá</td><td data-label="Sincretismo">Santa Joana D'Arc</td><td data-label="Elemento">Águas Revoltas e Terra</td><td data-label="Saudação">Obá Sirê!</td><td data-label="Vela">Rosa ou Marrom</td><td data-label="Oferendas">Quibebe de abóbora, acarajé, licor de menta</td><td data-label="Linha">Linha do Conhecimento</td></tr>
+            <tr><td data-label="Data">13 Jun</td><td data-label="Divindade">Exu e Pombagira</td><td data-label="Sincretismo">Santo Antônio</td><td data-label="Elemento">Encruzilhadas e Ruas</td><td data-label="Saudação">Laroyê! / Mojubá!</td><td data-label="Vela">Preta e Vermelha</td><td data-label="Oferendas">Padê (fubá/dendê), carne, cachaça, espumante, cigarro</td><td data-label="Linha">Povo da Rua / Esquerda</td></tr>
+            <tr><td data-label="Data">24 Jun</td><td data-label="Divindade">Xangô</td><td data-label="Sincretismo">São João Batista</td><td data-label="Elemento">Pedreiras e Fogo</td><td data-label="Saudação">Kaô Kabecilê!</td><td data-label="Vela">Marrom</td><td data-label="Oferendas">Amalá (quiabo com carne), cerveja preta</td><td data-label="Linha">Linha da Justiça</td></tr>
+            <tr><td data-label="Data">02 Jul</td><td data-label="Divindade">Boiadeiros</td><td data-label="Sincretismo">São Jorge / Santa Bárbara</td><td data-label="Elemento">Campo e sertão</td><td data-label="Saudação">Jetuá Boiadeiro!</td><td data-label="Vela">Amarelo e azul escuro</td><td data-label="Oferendas">Arroz carreteiro, feijão tropeiro, mocotó, carne seca</td><td data-label="Linha">Boiadeiros</td></tr>
+            <tr><td data-label="Data">26 Jul</td><td data-label="Divindade">Nanã Buruquê</td><td data-label="Sincretismo">Sant'Ana</td><td data-label="Elemento">Lodo e Lama</td><td data-label="Saudação">Saluba Nanã!</td><td data-label="Vela">Lilás ou Roxa</td><td data-label="Oferendas">Efó, sarapatel, batata-doce roxa amassada, champanhe</td><td data-label="Linha">Linha dos Ancestrais</td></tr>
+            <tr><td data-label="Data">16 Ago</td><td data-label="Divindade">Omolu / Obaluaê</td><td data-label="Sincretismo">São Roque</td><td data-label="Elemento">Terra e Doenças</td><td data-label="Saudação">Atotô!</td><td data-label="Vela">Preta e Branca / Pipoca</td><td data-label="Oferendas">Pipoca estourada na areia, deburú, água</td><td data-label="Linha">Linha da Evolução / Cura</td></tr>
+            <tr><td data-label="Data">27 Set</td><td data-label="Divindade">Erês / Cosme e Damião</td><td data-label="Sincretismo">São Cosme e Damião</td><td data-label="Elemento">Pureza e Alegria</td><td data-label="Saudação">Oni Ibejada! / Erê mi!</td><td data-label="Vela">Rosa, Azul Claro ou Colorida</td><td data-label="Oferendas">Doces, bolo confeitado, guaraná, balas, brinquedos</td><td data-label="Linha">Crianças / Ibijis</td></tr>
+            <tr><td data-label="Data">30 Set</td><td data-label="Divindade">Xangô</td><td data-label="Sincretismo">São Jerônimo</td><td data-label="Elemento">Pedreiras e Leis</td><td data-label="Saudação">Kaô Kabecilê!</td><td data-label="Vela">Marrom</td><td data-label="Oferendas">Amalá de quiabo, frutas secas, cerveja preta</td><td data-label="Linha">Linha da Justiça / Estudos</td></tr>
+            <tr><td data-label="Data">15 Out</td><td data-label="Divindade">Oxumarê</td><td data-label="Sincretismo">São Francisco</td><td data-label="Elemento">Arco-Íris e Renovação</td><td data-label="Saudação">Arroboboi!</td><td data-label="Vela">Amarela e Verde (ou Celeste)</td><td data-label="Oferendas">Batata-doce cozida e moldada em forma de cobra, frutas</td><td data-label="Linha">Linha da Renovação</td></tr>
+            <tr><td data-label="Data">28 Out</td><td data-label="Divindade">Logun Edé</td><td data-label="Sincretismo">São Judas Tadeu</td><td data-label="Elemento">Rios e Matas</td><td data-label="Saudação">Loci Loci Logun!</td><td data-label="Vela">Azul Marinho e Amarelo</td><td data-label="Oferendas">Axoxó (milho com coco), omolocum (feijão com ovos)</td><td data-label="Linha">Linha da Beleza e Caça</td></tr>
+            <tr><td data-label="Data">15 Nov</td><td data-label="Divindade">Dia da Umbanda</td><td data-label="Sincretismo">Fundação da Religião</td><td data-label="Elemento">Toda a Espiritualidade</td><td data-label="Saudação">Saravá Umbanda!</td><td data-label="Vela">Branca</td><td data-label="Oferendas">Flores brancas, velas brancas, defumação de ervas</td><td data-label="Linha">Todas as Linhas</td></tr>
+            <tr><td data-label="Data">04 Dez</td><td data-label="Divindade">Iansã / Oyá</td><td data-label="Sincretismo">Santa Bárbara</td><td data-label="Elemento">Ventos e Tempestades</td><td data-label="Saudação">Eparrei Iansã!</td><td data-label="Vela">Amarela ou Vermelha</td><td data-label="Oferendas">Acarajé, bolo de milho, licor de pitanga</td><td data-label="Linha">Linha dos Ventos / Eguns</td></tr>
+            <tr><td data-label="Data">08 Dez</td><td data-label="Divindade">Oxum</td><td data-label="Sincretismo">N. Sra. da Conceição</td><td data-label="Elemento">Cachoeiras e Ouro</td><td data-label="Saudação">Ora Yê Yê Ô!</td><td data-label="Vela">Amarela ou Ouro</td><td data-label="Oferendas">Omolocum, quindim, mel, champanhe doce, flores amarelas</td><td data-label="Linha">Linha do Amor e Confraria</td></tr>
+            <tr><td data-label="Data">17 Dez</td><td data-label="Divindade">Obaluaê</td><td data-label="Sincretismo">São Lázaro</td><td data-label="Elemento">Terra e Cura</td><td data-label="Saudação">Atotô Obaluaê!</td><td data-label="Vela">Preta e Amarela ou Branca</td><td data-label="Oferendas">Pipoca (deburú), pés de moleque, água mineral</td><td data-label="Linha">Linha da Saúde e Passagem</td></tr>
+            <tr><td data-label="Data">25 Dez</td><td data-label="Divindade">Oxalá</td><td data-label="Sincretismo">Jesus Cristo</td><td data-label="Elemento">Luz e Céu</td><td data-label="Saudação">Epá Babá! / Oxalá meu Pai!</td><td data-label="Vela">Branca</td><td data-label="Oferendas">Canjica branca com mel, frutas claras (pêra, uva verde)</td><td data-label="Linha">Linha da Fé / Cristalina</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ORAÇÕES ===== -->
+  <section id="oracoes">
+    <div class="container-narrow">
+      <h2 class="section-title">Orações e Preces</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Preces e orações para conexão espiritual com os Orixás e guias.</p>
+
+      <div class="entities-grid">
+
+        <div class="entity-card">
+          <div class="card-body">
+            <h3>Oração ao Anjo de Guarda</h3>
+            <p class="prayer-text">Meu companheiro de todas as horas; amigo de todos os momentos, tanto os de alegria como os de sofrimento; guia meus passos, meus pensamentos e minhas ações; cria em redor de mim um círculo de defesa contra os fluidos, influências ou interferências que possam afetar-me o corpo ou a mente; ajudando-me também estarás te ajudando, num intercâmbio de amor, de paz e de compreensão; sê o meu porta-voz diante de outro espíritos superiores, médicos ou cientistas; professores ou sacerdotes; guias ou amigos para que me dirijam na solução dos meus problemas físico-espirituais. Agradeço-te sinceramente toda a assistência que me prestaste, toda orientação que imprimiste à minha vida, socorrendo-me nas horas aflitivas, consolando-me nas épocas de amarguras e sugerindo-me a prática do amor e da caridade. Que Deus te dê mais luz, força e poder como recompensa pelo esforço, dedicação e afeto que demonstras no cumprimento de tão importante missão.</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <div class="card-body">
+            <h3>Prece a Oxalá</h3>
+            <p class="prayer-text">Nosso Pai Bondoso e Misericordioso. Babá Okê, cacubekê... Meu Pai das Colinas, olhai por nós. Assim como criastes todos os Orixás, Oxalá-Lufá, Oxalá-Guiá, Deus eterno e criador do Universo Celeste. Dai-nos a vossa bênção. Ó Divino Mestre, deixai-nos apoiar em vosso cajado de esperança. Alá, Babá, Orun... Alá, Orixá... Para que vosso Manto Sagrado possa proteger-nos com vossas bênçãos e benevolências. Orixá Babá... Olorun Ifá... Exé Eépá Babá... Axé Babá!</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <div class="card-body">
+            <h3>Prece a Ogum</h3>
+            <p class="prayer-text">Orixá, protetor, Deus das lutas por um ideal. Abençoai-me, dai-me forças, fé e esperança. Senhor Ogum, Deus das guerras e das demandas, livrai-me dos empecilhos e dos meus inimigos. Abençoai-me neste instante e sempre para que as forças do mal não me atinjam. Ogum Iê, Cavaleiro Andante dos caminhos que percorremos. Patacori... Ogum Iê... Ogum meu Pai, vencedor de demandas... Ogum Saravá Ogum... E que assim seja!</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <div class="card-body">
+            <h3>Prece a Oxóssi</h3>
+            <p class="prayer-text">Okê... Okê Cavaleiro de Aruanda! Okê... Rei dos Caboclos e das Matas! Senhor Oxóssi, que as suas matas possas estar repletas de Paz, Harmonia e Bem-Aventurança. Meu Pai Oxóssi, Rei dos Caçadores, não permita que eu me torne uma presa dos malefícios nem dos meus inimigos. Okê, Okê, meu Pai Oxóssi! Rei das Matas de Aruanda. Okê Arô!</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <div class="card-body">
+            <h3>Prece a Xangô</h3>
+            <p class="prayer-text">Senhor de Oyó. Pai justiceiro e dos incautos. Protetor da fé e da harmonia. Kaô Cabecilê do Trovão. Kaô Cabecilê da Justiça. Kaô Cabecilê, meu Pai Xangô. Morador no alto da pedreira. Dono de nossos destinos. Livrai-nos de todos os males. De todos os inimigos visíveis e invisíveis. Hoje e sempre, Kaô meu Pai.</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <div class="card-body">
+            <h3>Prece a Obaluaiê-Omulu</h3>
+            <p class="prayer-text">Dominador das epidemias. De todas as doenças e da peste. Omulu, Senhor da Terra. Obaluaiê, meu Pai Eterno. Dai-nos saúde para a nossa mente, dai-nos saúde para nosso corpo. Reforçai e revigorai nossos espíritos para que possamos enfrentar todos os males e infortúnios da matéria. Atotô meu Obaluaiê! Atotô meu Velho Pai! Atotô Rei da Terra! Atotô Babá!</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <div class="card-body">
+            <h3>Prece a Iansã</h3>
+            <p class="prayer-text">Oiá... Oiá... nossos passos. Iansã, Deusa máxima do Cacurucaia... Bamburucena, Rainha, Mãe e Protetora. Eparrei nossa mãe Divina. Deusa divina dos ventos e das tempestades. Deixa-nos sentir também a tua bonança. Iansã dos relâmpagos, dá-nos uma faísca da tua graça divina. Eparrei, Eparrei... Oiá!</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <div class="card-body">
+            <h3>Prece a Nanã Buruquê</h3>
+            <p class="prayer-text">Mãe protetora de todos nós. Senhora das águas opulentas. Deusa das chuvas benévolas. Deixa cair sobre nós a chuva divina da tua bondade fecunda e infinita. Salubá Nanã Buruquê! Purifica com tuas forças nossa atmosfera para que possamos ser envolvidos pelos teus olhos maravilhosos. Salubá Nanã Buruquê! Salubá!</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <div class="card-body">
+            <h3>Prece a Iemanjá</h3>
+            <p class="prayer-text">Poderosa força das águas. Inaê, Janaína, Sereia do Mar. Saravá minha Mãe Iemanjá! Leva para as profundezas do teu mar sagrado. Odoiá... Todas as minhas desventuras e infortúnios. Traz do teu mar todas as forças espirituais para alento de nossas necessidades. Paz, esperança, Odofiabá... Saravá, minha Mãe Iemanjá! Odofiabá...</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <div class="card-body">
+            <h3>Prece a Oxum</h3>
+            <p class="prayer-text">Canto sereno que assobia, nos regatos lagos e cachoeiras. Senhora faceira de beleza e ternura. Protetora das crianças e de todos os que necessitam de tua graça. Mamãe Oxum, Deusa formosa dos rios. A Mãe das Águas Doces, acolhe-nos em teu seio, proporciona-nos paz e alegria. Saravá Mamãe Oxum! Ora Iê Iê!</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <div class="card-body">
+            <h3>Prece aos Pretos Velhos</h3>
+            <p class="prayer-text">Meus benditos Pretos e Pretas Velhas. Meus Santos, guias e espíritos protetores. Mestres divinos da Linha das Almas. Abençoai esta casa e os meus passos. Aplacai as forças dos nossos inimigos. Meus queridos Pretos Velhos, que a sua candura e bondade recaia sobre nós como o véu do divino amor. Meus Pretos Velhos, dai-nos a fé, a esperança e a felicidade. Eu adorei as Almas! Saravá, meus Pretos Velhos!</p>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <div class="card-body">
+            <h3>Abençoe este Lar</h3>
+            <p class="prayer-text">Meu DEUS! Abençoe esta casa, não deixe nenhum mal entrar. Afaste as coisas ruins, venha conosco ficar. Minha alma Te pertence, só a Ti posso entregar. Prometo do fundo de minha alma, só por Tua Lei me guiar. Penso em Ti todo instante, estás acima de tudo. Pelo Amor que Te tenho, é que eu vivo nesse mundo. Ilumine minha casa, nunca deixe no escuro. A de minha mãe e meu pai, de meus irmãos e de todos. Abençoe cada quarto, sala e cozinha. Abençoe todo teto, paredes e escadarias. Abençoe onde piso, abençoe todo dia. Abençoe esta casa, como a de José e Maria. Faça tudo espiritualmente, traga paz e alegria. Afaste todo tristeza, fique em nossa companhia. Dê a todos Fé e Amor, e Humildade toda vida. Dê a todos que precisam, Consciência Divina. Faça na casa de meus pais, como fizeste no Rio Jordão. Com a água Pura e Santa, abençoaste João. Faça com todos teus filhos, e com todos meus irmãos. Ponha Luz em todas casas, acabe com a escuridão. Use todo TEU PODER, cuide sempre desse lar. Faça que todos se unam, e possam sempre se amar. Não esqueça um só dia, de vir nos visitar. Sente conosco na mesa, quando formos nos alimentar. DEUS de Amor meu Pai Eterno, jamais esqueça de nós. Ajude em todas as casas, crianças, pais e avós. Aceite o meu pedido, eu confio em Vós. Não deixe ninguém sofrer, nunca nos deixe a sós. Abençoe esta casa, como abençoaste tudo aqui. Prometo de coração, sete vezes repetir. Meu DEUS, eu Te amo, vivo somente para Ti. Tua Lei e Mandamentos, sempre hei de seguir.</p>
+          </div>
+        </div>
+
+      </div>
+  </section>
+
+  <!-- ===== LINHAS DE TRABALHO ===== -->
+  <section id="linha-trabalho">
+    <div class="container-narrow text-content">
+      <h2 class="section-title">Linhas de Trabalho</h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Tronos Divinos, Falanges e a Hierarquia dos Guias de Lei na Umbanda.</p>
+
+      <img src="images/Tronos Divinos, Falanges e a Hierarquia dos Guias de Lei na Umbanda.png" alt="Diagrama dos Tronos Divinos, Falanges e Hierarquia" class="full-img" loading="lazy">
+
+      <h3>Os Tronos Divinos: A Manifestação de Deus (Olorum)</h3>
+
+      <p>Os Tronos Divinos representam as próprias qualidades, virtudes e energias de Deus (Olorum ou Zambi) assentadas no universo. Eles não são "pessoas" ou "espíritos", mas sim funções cósmicas e divinas que sustentam a criação. Na teologia da Umbanda, cada Trono é governado por um par de Orixás (um de magnetismo expansivo/positivo e outro de magnetismo restritivo/negativo).</p>
+
+      <p>Existem sete Tronos principais que regem a vida:</p>
+
+      <ul>
+        <li><strong>Trono da Fé:</strong> Rege a religiosidade e a espiritualidade (Oxalá e Oyá Logunã).</li>
+        <li><strong>Trono do Amor:</strong> Rege a união, a concepção e a harmonia (Oxum e Oxumarê).</li>
+        <li><strong>Trono do Conhecimento:</strong> Rege o aprendizado, o raciocínio e a expansão da mente (Oxóssi e Obá).</li>
+        <li><strong>Trono da Justiça:</strong> Rege o equilíbrio, a razão e a aplicação das leis divinas (Xangô e Egunitá).</li>
+        <li><strong>Trono da Lei (ou da Ordem):</strong> Rege o direcionamento, a ordenação e a retidão (Ogum e Iansã).</li>
+        <li><strong>Trono da Evolução:</strong> Rege a transição, a transformação e a passagem de ciclos (Obaluaê e Nanã Buruquê).</li>
+        <li><strong>Trono da Geração:</strong> Rege a criatividade, o nascimento e a renovação da vida (Iemanjá e Omulu).</li>
+      </ul>
+
+      <h3>As Falanges: O Exército de Trabalho Espiritual</h3>
+
+      <p>Se os Tronos Divinos e os Orixás são a energia pura, as Falanges são os agrupamentos de espíritos humanos que se organizaram para trabalhar em nome dessa energia. Uma Falange é como um grande exército ou corporação espiritual direcionada a uma missão específica.</p>
+
+      <p><strong>Linhas de Trabalho:</strong> Os espíritos se agrupam por afinidade arquetípica para facilitar a comunicação com os encarnados. É por isso que existem as falanges de Pretos Velhos, Caboclos, Baianos, Boiadeiros, Crianças e Exus.</p>
+
+      <p><strong>Nomes Simbólicos:</strong> Os espíritos que pertencem a uma mesma falange costumam adotar o mesmo "sobrenome" ou nome de guerra para indicar de onde vem sua força e qual Orixá eles servem. Por exemplo: Caboclo Sete Flechas (atua na vibração do Conhecimento/Oxóssi), Pai Joaquim de Angola (atua na vibração da Evolução/Anciões), Exu Caveira (atua na vibração da Geração/Cemitério).</p>
+
+      <h3>A Hierarquia dos Guias de Lei: Da Luz à Terra</h3>
+
+      <p>Os Guias de Lei são os espíritos que se manifestam nos terreiros por meio da mediunidade de incorporação. Eles não agem por conta própria; estão submetidos a uma rigorosa hierarquia espiritual que garante a ordem e a segurança dos trabalhos. A estrutura hierárquica funciona de cima para baixo:</p>
+
+      <ul>
+        <li><strong>Orixás Ancestrais e Universais:</strong> Divindades puras, os Tronos Divinos (não incorporam).</li>
+        <li><strong>Chefes de Legião:</strong> Altos espíritos de luz que coordenam milhões de outros espíritos. Raramente incorporam, pois supervisionam planos inteiros.</li>
+        <li><strong>Chefes de Falange:</strong> Guias de alta evolução que comandam agrupamentos específicos. Podem incorporar em momentos especiais para orientar o terreiro.</li>
+        <li><strong>Guias de Trabalho (Subfalangeiros):</strong> São os Pretos Velhos, Caboclos e demais entidades que incorporam rotineiramente nos médiuns para dar passes, consultas e descarregos.</li>
+        <li><strong>Protetores:</strong> Espíritos que ainda estão em fase de aprendizado, mas que já possuem permissão para proteger a vida diária dos médiuns.</li>
+      </ul>
+
+      <div class="highlight">
+        <strong>O Fluxo da Força Espiritual (Exemplo Prático)</strong><br>
+        O Trono da Lei (Ogum) emite a ordem de proteção e caminhos abertos.<br>
+        → O Chefe da Legião de Ogum recebe essa determinação no plano astral superior.<br>
+        → Ele repassa a missão para o Chefe de Falange (ex: Ogum Beira-Mar).<br>
+        → O Guia Incorporado no terreiro (o Ogum Beira-Mar daquele médium) executa a limpeza espiritual e aconselha o consulente na Terra.<br><br>
+        A harmonia da Umbanda reside justamente nesse respeito à hierarquia: nenhum Guia de Lei dá uma ordem que fira as diretrizes dos Tronos Divinos. Tudo funciona sob a égide do amor, da caridade e da evolução espiritual.
+      </div>
+
+    </div>
+  </section>
+
+  </main>
+
+  <!-- <footer>
+    <div class="container">
+      <h3>Ilê Axê Tiriri Lonan ✦</h3>
+      <div class="divider"></div>
+      <p>"Amor, Humildade e Caridade — a trilha que nos leva a Deus."</p>
+      <p style="margin-top:.5rem;font-size:.82rem;opacity:.6">Saravá! Que a paz de Oxalá esteja com todos.</p>
+      <div class="footer-links">
+        <a href="#inicio">Início</a>
+        <a href="#historia">História</a>
+        <a href="#umbanda">Umbanda</a>
+        <a href="#orixas">Orixás</a>
+        <a href="#mentores">Mentores</a>
+        <a href="#exus">Exus</a>
+        <a href="#linhas">Linhas</a>
+        <a href="#guias">Guias</a>
+        <a href="#vibracoes">Vibrações</a>
+        <a href="#comemoracoes">Datas</a>
+        <a href="#oracoes">Orações</a>
+        <a href="#linha-trabalho">Trabalho</a>
+      </div>
+    </div>
+  </footer> -->
+
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+.logo-container {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+}
+
+.smoke-container {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 200px;
+  pointer-events: none;
+}
+
+.smoke {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(100,100,100,0.3) 0%, transparent 70%);
+  animation: smokeFloat 4s ease-out infinite;
+  opacity: 0;
+}
+
+.smoke-1 { animation-delay: 0s; }
+.smoke-2 { animation-delay: 1.3s; }
+.smoke-3 { animation-delay: 2.6s; }
+
+@keyframes smokeFloat {
+  0% { opacity: 0; transform: translateY(0) scale(1); }
+  20% { opacity: 0.6; }
+  100% { opacity: 0; transform: translateY(-100px) scale(1.5); }
+}
+
+.logo {
+  width: 350px;
+  filter: drop-shadow(0 0 30px rgba(232, 184, 74, 0.6));
+  animation: logoGlow 3s ease-in-out infinite, logoFloat 6s ease-in-out, logoEntrance 1.5s ease-out;
+  transition: transform 0.1s ease-out;
+}
+
+@keyframes logoGlow {
+  0%, 100% { filter: drop-shadow(0 0 20px rgba(232, 184, 74, 0.4)); }
+  50% { filter: drop-shadow(0 0 50px rgba(232, 184, 74, 1)) drop-shadow(0 0 80px rgba(255, 100, 50, 0.5)); }
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-8px) rotate(1deg); }
+  75% { transform: translateY(-5px) rotate(-1deg); }
+}
+
+@keyframes logoEntrance {
+  0% { opacity: 0; transform: scale(0.5) translateY(-50px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}

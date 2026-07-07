@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>NightCity Loading</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/intro.css">
+  <link rel="stylesheet" href="css/scenes.css">
+  <link rel="stylesheet" href="css/effects.css">
+  <link rel="stylesheet" href="css/logo.css">
+  <link rel="stylesheet" href="css/menus.css">
+  <link rel="stylesheet" href="css/panels.css">
+  <link rel="stylesheet" href="css/map.css">
+  <link rel="stylesheet" href="css/progress.css">
+  <link rel="stylesheet" href="css/info.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="preload" as="image" href="img/bg2.webp">
+  <link rel="preload" as="image" href="img/bg3.webp">
+  <link rel="preload" as="image" href="img/logo2.png">
+</head>
+<body>
+<div id="testModeBanner" style="display:none;position:fixed;top:0;left:0;right:0;background:#FF9800;color:#000;padding:8px;text-align:center;font-weight:bold;z-index:9999;">TEST MODE - Dados simulados</div>
+
+<div class="intro" id="intro">
+  <div class="intro-text" id="introText"></div>
+</div>
+
+<canvas id="rainCanvas"></canvas>
+
+<div id="scenes">
+  <div class="scene active" style="background-image: url('img/noise.png')"></div>
+  <div class="scene" style="background-image: url('img/bg2.webp')"></div>
+  <div class="scene" style="background-image: url('img/bg3.webp')"></div>
+</div>
+
+<div class="cinema-bar top"></div>
+<div class="cinema-bar bottom"></div>
+<div class="vignette"></div>
+<div class="grain"></div>
+<div class="overlay"></div>
+
+<div class="theme-selector">
+  <button class="theme-btn theme-western-btn active" data-theme="western" title="Western"></button>
+  <button class="theme-btn theme-blood-btn" data-theme="blood" title="Blood"></button>
+  <button class="theme-btn theme-night-btn" data-theme="night" title="Night"></button>
+  <button class="theme-btn theme-desert-btn" data-theme="desert" title="Desert"></button>
+</div>
+
+<div class="logo-container" id="logoContainer">
+  <div class="smoke-container">
+    <div class="smoke smoke-1"></div>
+    <div class="smoke smoke-2"></div>
+    <div class="smoke smoke-3"></div>
+  </div>
+  <img src="img/logo2.png" class="logo" alt="Logo" id="logo">
+</div>
+
+<div class="clock-container" id="clockContainer">
+  <div class="clock-time" id="clockTime">00:00</div>
+  <div class="clock-date" id="clockDate"></div>
+</div>
+
+<div class="social-menu">
+  <a id="discordLink" href="#" target="_blank" class="social-menu-item">
+    <i class="fab fa-discord"></i>
+    <span class="social-menu-label">Discord</span>
+  </a>
+  <a href="#" class="social-menu-item" data-social="twitter">
+    <i class="fab fa-twitter"></i>
+    <span class="social-menu-label">Twitter</span>
+  </a>
+  <a href="#" class="social-menu-item" data-social="instagram">
+    <i class="fab fa-instagram"></i>
+    <span class="social-menu-label">Instagram</span>
+  </a>
+  <a href="#" class="social-menu-item" data-social="youtube">
+    <i class="fab fa-youtube"></i>
+    <span class="social-menu-label">YouTube</span>
+  </a>
+  <a href="#" class="social-menu-item" data-social="website">
+    <i class="fas fa-globe"></i>
+    <span class="social-menu-label">Website</span>
+  </a>
+</div>
+
+<div class="side-menu-item-wrapper" data-panel="staff">
+  <div class="side-menu-item">
+    <i class="fas fa-users-cog"></i>
+    <span class="side-menu-label">Staff</span>
+  </div>
+  <div class="side-panel" id="staffPanel">
+    <div class="panel-header">
+      <i class="fas fa-users-cog"></i> <span id="staffTitle"></span>
+    </div>
+    <div class="panel-content" id="staffList"></div>
+  </div>
+</div>
+
+<div class="side-menu-item-wrapper" data-panel="players">
+  <div class="side-menu-item">
+    <i class="fas fa-users"></i>
+    <span class="side-menu-label">Players</span>
+  </div>
+  <div class="side-panel" id="playersPanel">
+    <div class="panel-header">
+      <i class="fas fa-users"></i> <span id="playersTitle"></span>
+    </div>
+    <div class="panel-content" id="playersList"></div>
+  </div>
+</div>
+
+<div class="side-menu-item-wrapper" data-panel="news">
+  <div class="side-menu-item">
+    <i class="fas fa-newspaper"></i>
+    <span class="side-menu-label">News</span>
+  </div>
+  <div class="side-panel" id="newsPanel">
+    <div class="panel-header">
+      <i class="fas fa-newspaper"></i> <span id="newsTitle"></span>
+    </div>
+    <div class="panel-content" id="newsList"></div>
+  </div>
+</div>
+
+<div class="side-menu-item-wrapper" data-panel="map">
+  <div class="side-menu-item">
+    <i class="fas fa-map"></i>
+    <span class="side-menu-label">Mapa</span>
+  </div>
+  <div class="side-panel" id="mapPanel">
+    <div class="panel-header">
+      <i class="fas fa-map"></i> <span id="mapTitle"></span>
+      <div class="map-inline-controls">
+        <button class="map-zoom-btn" onclick="zoomMapPanel(0.2)" title="Zoom +"><i class="fas fa-plus"></i></button>
+        <span class="map-zoom-level" id="mapZoomLevel">100%</span>
+        <button class="map-zoom-btn" onclick="zoomMapPanel(-0.2)" title="Zoom -"><i class="fas fa-minus"></i></button>
+        <button class="map-zoom-btn" onclick="resetMapPanel()" title="Resetar"><i class="fas fa-sync"></i></button>
+      </div>
+    </div>
+    <div class="panel-content map-content" id="mapPanelContent">
+      <div class="map-zoom-container" id="mapZoomContainer">
+        <img src="img/map.webp" class="map-image" alt="Mapa" onerror="this.style.display='none'">
+        <div class="map-blips-inline" id="mapBlipsInline"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="side-menu-item-wrapper" data-panel="rules">
+  <div class="side-menu-item">
+    <i class="fas fa-scroll"></i>
+    <span class="side-menu-label">Regras</span>
+  </div>
+  <div class="side-panel" id="rulesPanel">
+    <div class="panel-header">
+      <i class="fas fa-scroll"></i> <span id="rulesTitle"></span>
+    </div>
+    <div class="panel-content" id="rulesList"></div>
+  </div>
+</div>
+
+<div class="text-container">
+  <div class="cinematic-text" id="text"></div>
+</div>
+
+<div class="bottom-info">
+  <div class="progress-container">
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <div class="progress-text" id="progressText"></div>
+  </div>
+  
+  <div class="tips-container" id="tipsContainer">
+    <div class="tips-text" id="tipsText"></div>
+    <div class="tip-detail" id="tipDetail"></div>
+  </div>
+  
+  <div class="server-info">
+    <div class="info-item">
+      <i class="fas fa-users"></i>
+      <span id="playerCount"></span>
+    </div>
+    <div class="info-item">
+      <i class="fas fa-signal"></i>
+      <div class="ping-indicator">
+        <div class="ping-dot ping-good" id="pingDot"></div>
+        <span id="pingValue">-- ms</span>
+      </div>
+    </div>
+    <div class="info-item">
+      <i class="fas fa-server"></i>
+      <span>Versao <span id="serverVersion"></span></span>
+    </div>
+  </div>
+</div>
+
+<audio id="audio" src="music/music.ogg" loop></audio>
+<audio id="ambient" src="music/wind.ogg" loop></audio>
+
+<script src="js/shared/config.js" defer></script>
+<script src="js/core/locales/en.js" defer></script>
+<script src="js/core/locales/pt-br.js" defer></script>
+<script src="js/core/locales/es.js" defer></script>
+<script src="js/core/locales/fr.js" defer></script>
+<script src="js/core/locales/de.js" defer></script>
+<script src="js/core/test-mode.js" defer></script>
+<script src="js/ui/clock.js" defer></script>
+<script src="js/ui/panels.js" defer></script>
+<script src="js/ui/theme.js" defer></script>
+<script src="js/game/players.js" defer></script>
+<script src="js/game/map.js" defer></script>
+<script src="js/game/tips.js" defer></script>
+<script src="js/intro/intro.js" defer></script>
+<script src="js/intro/audio.js" defer></script>
+<script src="js/core/nui.js" defer></script>
+<script src="js/core/core.js" defer></script>
+<script src="js/effects/effects.js" defer></script>
+<script src="js/effects/rain.js" defer></script>
+<script src="js/effects/particles.js" defer></script>
+</body>
+</html>

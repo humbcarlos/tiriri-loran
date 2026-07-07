@@ -1,0 +1,40 @@
+.theme-selector {
+  position: absolute;    top: 2%;
+  right: 3%;
+  z-index: 15;
+  display: flex;
+  gap: 8px;
+}
+
+.theme-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.theme-btn:hover { transform: scale(1.2); border-color: white; }
+.theme-btn.active { border-color: white; box-shadow: 0 0 10px currentColor; }
+
+.theme-western-btn { background: #E8B84A; }
+.theme-blood-btn { background: #8B0000; }
+.theme-night-btn { background: #4169E1; }
+.theme-desert-btn { background: #D2691E; }
+
+@media (max-width: 1200px) {
+  .side-menu-item-wrapper { display: none; }
+  .rules-container { width: 220px; }
+}
+
+@media (max-width: 768px) {
+  .logo { width: 250px; }
+  .cinematic-text { font-size: 1.5rem; }
+  .clock-container { padding: 8px 15px; }
+  .clock-time { font-size: 1.2rem; }
+  .rules-container, .map-container { display: none; }
+  .tips-container { width: 90%; }
+  .progress-container { width: 80%; }
+  .server-info { flex-wrap: wrap; justify-content: center; gap: 15px; }
+  .map-blip { transform: scale(0.8); }
+theme-btn { width: 22px; height: 22px; }

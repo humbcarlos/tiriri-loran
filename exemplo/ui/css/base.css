@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'RioGrande';
+  src: url('../RioGrande.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+body { overflow: hidden; background: black; }
+
+.western-font { font-family: 'RioGrande', serif; }
+.cinematic-text, .intro-text { font-family: 'RioGrande', serif; }
+
+:root {
+  --primary: #E8B84A;
+  --secondary: #8B7355;
+  --bg-color: rgba(0, 0, 0, 0.7);
+  --text-color: #ccc;
+}
+
+.theme-western { --primary: #E8B84A; --secondary: #8B7355; }
+.theme-blood { --primary: #8B0000; --secondary: #4A0000; --bg-color: rgba(30, 5, 5, 0.85); }
+.theme-night { --primary: #4169E1; --secondary: #191970; --bg-color: rgba(10, 10, 30, 0.85); }
+.theme-desert { --primary: #D2691E; --secondary: #8B4513; --bg-color: rgba(40, 25, 10, 0.85); }
+
+.overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.35); z-index: 2; pointer-events: none; }
