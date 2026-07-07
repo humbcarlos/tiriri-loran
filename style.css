@@ -687,8 +687,14 @@
       gap: 1.5rem;
       margin-top: 2rem;
     }
+    #vibracoes .container-narrow {
+      max-width: 1200px;
+    }
+    #vibracoes .image-grid {
+      grid-template-columns: 1fr;
+    }
     .image-grid img {
-      width: 200%;
+      width: 100%;
       border-radius: 12px;
       box-shadow: var(--shadow);
     }
@@ -758,6 +764,27 @@
       .group-title { font-size: 1.3rem; }
       .entities-grid { grid-template-columns: 1fr; }
       .image-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      body { margin-left: 0; }
+      .sidebar { width: 60px; }
+      .sidebar.open { width: 200px; }
+      .hero h1 { font-size: 1.6rem; }
+      .hero p { font-size: .95rem; }
+      .section-title { font-size: 1.4rem; }
+      .group-title { font-size: 1.1rem; }
+      section { padding: 3rem 1rem; }
+      .entity-card .card-img { height: 180px; }
+      .entity-card .card-body { padding: 1rem; }
+      .entity-card .card-body h3 { font-size: 1.1rem; }
+      .text-content p { font-size: .92rem; }
+      .text-content h3 { font-size: 1.25rem; }
+      .splash-bottom h1 { font-size: 1.4rem; }
+      .splash-bottom p { font-size: .75rem; }
+      #splash img { margin-top: 12vh; }
+    }
+    @media (max-width: 1100px) {
+      .right-panel { width: 240px; right: 155px; }
     }
 
     /* ===== RIGHT NAV ===== */
