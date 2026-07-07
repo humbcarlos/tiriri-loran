@@ -287,6 +287,23 @@
       opacity: 1;
     }
 
+    /* ===== MOBILE MENU BUTTON (fora da sidebar) ===== */
+    #mobile-menu-btn {
+      display: none;
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 100;
+      font-size: 28px;
+      color: var(--white);
+      background: var(--red);
+      padding: 8px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    #mobile-menu-btn:hover { background: #a33a2e; }
+
     /* ===== MAIN ===== */
     main { min-height: 100vh; }
 
@@ -757,6 +774,7 @@
     }
     @media (max-width: 768px) {
       body { margin-left: 0; }
+      #mobile-menu-btn { display: block; }
       .sidebar {
         left: 0;
         transform: translateX(-100%);

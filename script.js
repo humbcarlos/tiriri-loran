@@ -90,6 +90,7 @@ setTimeout(fadeSplash, 3500);
 
 const sidebar = document.querySelector('.sidebar');
 const closeBtn = document.querySelector('#btn');
+const mobileBtn = document.querySelector('#mobile-menu-btn');
 const navLinks = document.querySelectorAll('.sidebar .nav-list li a');
 const allSections = document.querySelectorAll('section[id]');
 const logo = document.querySelector('.logo-details');
@@ -128,6 +129,18 @@ closeBtn.addEventListener('click', () => {
   }
 });
 
+// Mobile: botão fora da sidebar
+if (mobileBtn) {
+  mobileBtn.addEventListener('click', () => {
+    if (isMobile()) {
+      sidebar.classList.toggle('open');
+      menuBtnChange();
+      mobileBtn.classList.toggle('bx-menu', !sidebar.classList.contains('open'));
+      mobileBtn.classList.toggle('bx-x', sidebar.classList.contains('open'));
+    }
+  });
+}
+
 // Nav links: mostra só a seção alvo e posiciona no topo
 navLinks.forEach(link => {
   link.addEventListener('mouseenter', () => {
@@ -144,6 +157,9 @@ navLinks.forEach(link => {
     if (isMobile()) {
       sidebar.classList.remove('open');
       closeBtn.classList.replace('bx-menu-alt-right', 'bx-menu');
+      if (mobileBtn) {
+        mobileBtn.classList.replace('bx-x', 'bx-menu');
+      }
       const target = document.querySelector(link.getAttribute('href'));
       if (target) {
         allSections.forEach(s => s.style.display = 'none');
