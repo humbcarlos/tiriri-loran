@@ -5,8 +5,7 @@
     
     :root {
       /* --- Suas cores originais --- */
-      --white: #ffffff;
-      --whitebg: rgba(167, 37, 37, 0.682);
+      --white: #ffffff;      
       --gold: #D4AF37;
       --gold-light: #F0D060;
       --deep-blue: #000000;
@@ -19,12 +18,12 @@
       --cream: #FFFDF5;
       --warm-bg: #FDF8F0;
       --red: #72170f;
-      --redbg: #c53023;
+      --redbg: rgba(167, 37, 37, 0.682);
       --red-light: #3b38374b;
       --yellow: rgb(245, 191, 14);
       --black: #000;
       --amarelo-claro: #eecb56c4;
-      --cinza-claro: #1f1f1eec;
+      --cinza-claro: #2c2c29ec;
     
       /* --- Novas Variantes de Dourado e Luxo --- */
       --gold-dark: #AA8413;       /* Versão mais escura para hover ou textos em fundo claro */
@@ -326,8 +325,8 @@
     .hero h1 {
       font-size: 3.5rem;
       color: var(--redbg);
-      -webkit-text-stroke: 1.5px #ff0000;
-      text-stroke: 1.5px #ff0000;
+      /* -webkit-text-stroke: 1.5px #ff0000;
+      text-stroke: 1.5px #ff0000; */
       margin-bottom: .5rem;
       word-break: break-word;
       overflow-wrap: break-word;
@@ -466,7 +465,7 @@
     .calendario-table {
       width: 100%;
       border-collapse: collapse;
-      background: var(--red);
+      background: var(--cinza-claro);
       color: rgba(255,255,255,.87);
       font-size: .7rem;
       border-radius: 12px;
@@ -474,7 +473,7 @@
       table-layout: fixed;
     }
     .calendario-table thead {
-      background: var(--red);
+      background: var(--cinza-claro);
     }
     .calendario-table th {
       padding: .6rem .35rem;
@@ -669,17 +668,17 @@
     .entity-card .card-body p + p { margin-top: .5rem; }
 
     /* ===== SECTION BACKGROUNDS ===== */
-    #historia { background: var(--whitebg); }
-    #umbanda { background: var(--whitebg); }
-    #orixas { background: var(--whitebg); }
-    #mentores { background: var(--whitebg); }
-    #exus { background: var(--whitebg); }
-    #linhas { background: var(--whitebg); }
-    #guias { background: var(--whitebg); }
-    #vibracoes { background: var(--whitebg); }
-    #comemoracoes { background: var(--whitebg); }
-    #oracoes { background: var(--whitebg); }
-    #linha-trabalho { background: var(--whitebg); }
+    #historia { background: var(--redbg); }
+    #umbanda { background: var(--redbg); }
+    #orixas { background: var(--redbg); }
+    #mentores { background: var(--redbg); }
+    #exus { background: var(--redbg); }
+    #linhas { background: var(--redbg); }
+    #guias { background: var(--redbg); }
+    #vibracoes { background: var(--redbg); }
+    #comemoracoes { background: var(--redbg); }
+    #oracoes { background: var(--redbg); }
+    #linha-trabalho { background: var(--redbg); }
 
     /* ===== IMAGE GRID ===== */
     .image-grid {
