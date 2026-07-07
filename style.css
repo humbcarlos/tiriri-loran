@@ -719,6 +719,12 @@
       border-radius: 12px;
       box-shadow: var(--shadow);
     }
+    #linha-trabalho .container-narrow {
+      max-width: 1200px;
+    }
+    #linha-trabalho .full-img {
+      max-width: 100%;
+    }
 
     /* ===== FOOTER ===== */
     footer {
